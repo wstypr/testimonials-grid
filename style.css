@@ -278,6 +278,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
     gap: 32px;
+    align-items: start;
   }
 
   .testimonial-1{
@@ -295,4 +296,8 @@ body {
   .quote{
     background-position: top 0px right 60px;
   }
+}
+
+.bordered {
+  border: 2px solid red;
 }
