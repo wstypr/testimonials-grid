@@ -1,0 +1,294 @@
+/* CSS Reset */
+
+/* Box sizing, padding, and margin rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* CSS Reset End */
+
+:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: #f6f5f6;
+}
+
+.card {
+  padding: 2rem;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.2474);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-img {
+  border-radius: 50%;
+  border: 2px solid var(--purple-300);
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.container {
+  padding: 4.5625rem 2.1875rem;
+}
+
+.testimonial-1 {
+  background-color: var(--purple-500);
+}
+
+.testimonial-2 {
+  background-color: var(--grey-500);
+}
+
+.testimonial-3,
+.testimonial-5 {
+  background-color: white;
+  color: var(--grey-400);
+}
+
+.testimonial-4 {
+  background-color: var(--dark-blue);
+}
+
+.profile-name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0px;
+  margin-bottom: 0.25rem;
+}
+
+.profile-role {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}
+
+.testimonial-upper {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+
+.testimonial-lower {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.testimonial-1 .testimonial-lower,
+.testimonial-1 .profile-role {
+  color: var(--purple-50);
+}
+
+.testimonial-2 .testimonial-lower {
+  color: var(--grey-100);
+}
+
+.testimonial-2 .profile-role {
+  color: var(--grey-100);
+}
+
+.testimonial-2 .profile-img {
+  border: none;
+}
+
+.testimonial-3 .testimonial-lower,
+.testimonial-5 .testimonial-lower,
+.testimonial-3 .profile-role,
+.testimonial-5 .profile-role {
+  color: var(--grey-400);
+}
+
+.testimonial-3 .testimonial-upper,
+.testimonial-5 .testimonial-upper {
+  color: var(--grey-500);
+}
+
+.testimonial-3 .profile-img,
+.testimonial-5 .profile-img {
+  border: none;
+}
+
+.testimonial-4 .testimonial-upper {
+  color: var(--grey-200);
+}
+
+.testimonial-4 .testimonial-lower {
+  color: var(--grey-100);
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding: 83px 60px;
+  }
+
+  .card:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .testimonial-1 {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .testimonial-4 {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  .testimonial-5 {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+
+  .quote {
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top 0px right 167px;
+  }
+}
+
+@media(min-width:1200px){
+  .container {
+    max-width: 1114px;
+    margin: 0 auto;
+    padding: 229px 0px;
+  }
+
+  .testimonials-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .testimonial-1{
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .testimonial-5{
+    grid-area: 1 / 4 / 3 / 5 ;
+  }
+
+  .testimonial-4{
+    grid-area: 2 / 2 / 3 / 4;
+  }
+}
