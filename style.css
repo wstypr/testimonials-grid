@@ -291,4 +291,8 @@ body {
   .testimonial-4{
     grid-area: 2 / 2 / 3 / 4;
   }
+
+  .quote{
+    background-position: top 0px right 60px;
+  }
 }
